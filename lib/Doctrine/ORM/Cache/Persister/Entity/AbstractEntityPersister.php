@@ -243,6 +243,7 @@ abstract class AbstractEntityPersister implements CachedEntityPersister
         $uow = $this->em->getUnitOfWork();
 
         foreach ($this->joinedAssociations as $name) {
+            /** @var AssociationMetadata $association */
             $association  = $this->class->getProperty($name);
             $assocEntity  = $association->getValue($entity);
             $targetEntity = $association->getTargetEntity();

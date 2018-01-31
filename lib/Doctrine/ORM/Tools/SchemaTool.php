@@ -616,7 +616,7 @@ class SchemaTool
         foreach ($class->getIdentifierFieldNames() as $fieldName) {
             $property = $class->getProperty($fieldName);
 
-            if (! ($property instanceof AssociationMetadata)) {
+            if (! ($property instanceof ToOneAssociationMetadata)) {
                 continue;
             }
 

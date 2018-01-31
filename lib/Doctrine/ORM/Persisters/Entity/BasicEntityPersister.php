@@ -1230,6 +1230,7 @@ class BasicEntityPersister implements EntityPersister
                     throw ORMException::invalidFindByInverseAssociation($this->class->getClassName(), $fieldName);
                 }
 
+                /** @var ClassMetadata $class */
                 $class      = $this->class->isInheritedProperty($fieldName)
                     ? $property->getDeclaringClass()
                     : $this->class;
@@ -1779,6 +1780,7 @@ class BasicEntityPersister implements EntityPersister
             // Many-To-Many requires join table check for joinColumn
             if ($owningAssociation instanceof ManyToManyAssociationMetadata) {
                 if (! $owningAssociation->isOwningSide()) {
+                    /** @var ManyToManyAssociationMetadata $association */
                     $owningAssociation = $association;
                 }
 
@@ -1799,6 +1801,7 @@ class BasicEntityPersister implements EntityPersister
                     throw ORMException::invalidFindByInverseAssociation($this->class->getClassName(), $field);
                 }
 
+                /** @var ClassMetadata $class */
                 $class      = $this->class->isInheritedProperty($field)
                     ? $owningAssociation->getDeclaringClass()
                     : $this->class

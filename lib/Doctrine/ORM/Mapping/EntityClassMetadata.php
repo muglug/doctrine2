@@ -180,7 +180,7 @@ abstract class EntityClassMetadata extends ComponentMetadata
         /** @var EntityClassMetadata|null $superClassMetadata */
         $superClassMetadata = $this->getParent();
 
-        while ($superClassMetadata !== null) {
+        while ($superClassMetadata instanceof EntityClassMetadata) {
             if ($superClassMetadata->entityName === $subClassMetadata->entityName) {
                 throw new MappingException(
                     sprintf(
