@@ -1833,7 +1833,7 @@ class Parser
 
         $this->match(Lexer::T_OPEN_PARENTHESIS);
 
-        $args[] = $this->NewObjectArg();
+        $args = [$this->NewObjectArg()];
 
         while ($this->lexer->isNextToken(Lexer::T_COMMA)) {
             $this->match(Lexer::T_COMMA);

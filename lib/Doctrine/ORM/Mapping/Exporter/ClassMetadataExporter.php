@@ -47,11 +47,13 @@ class ClassMetadataExporter implements Exporter
             : 'EntityClassMetadata'
         ;
 
-        $lines[] = sprintf('class %sClassMetadata extends Mapping\%s', $shortClassName, $extendedClassName);
-        $lines[] = '{';
-        $lines[] = $this->exportConstructor($metadata, $indentationLevel + 1);
-        $lines[] = '}';
-        $lines[] = null;
+        $lines = [
+            sprintf('class %sClassMetadata extends Mapping\%s', $shortClassName, $extendedClassName),
+            '{',
+            $this->exportConstructor($metadata, $indentationLevel + 1),
+            '}',
+            null,
+        ];
 
         return implode(PHP_EOL, $lines);
     }

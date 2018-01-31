@@ -29,7 +29,7 @@ class SingleTablePersister extends AbstractEntityInheritancePersister
             return $this->currentPersisterContext->selectColumnListSql;
         }
 
-        $columnList[] = parent::getSelectColumnsSQL();
+        $columnList = [parent::getSelectColumnsSQL()];
 
         // Append discriminator column
         $discrColumn      = $this->class->discriminatorColumn;
