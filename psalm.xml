@@ -26,7 +26,8 @@
 
         <PropertyNotSetInConstructor errorLevel="info" />
         <MissingConstructor errorLevel="info" />
-        <UntypedParam errorLevel="info" />
+        <MissingParamType errorLevel="info" />
+        <MissingClosureParamType errorLevel="info" />
 
         <!-- level 4 issues - points to possible deficiencies in logic, higher false-positives -->
 
@@ -59,9 +60,6 @@
         <PossiblyNullPropertyAssignmentValue errorLevel="info" />
         <PossiblyNullPropertyFetch errorLevel="info" />
         <PossiblyNullReference errorLevel="info" />
-        <PossiblyUndefinedGlobalVariable errorLevel="info" />
-        <PossiblyUndefinedVariable errorLevel="info" />
-        <PossiblyUndefinedMethod errorLevel="info" />
 
         <!-- level 5 issues - should be avoided at mosts costs... -->
 
@@ -79,7 +77,7 @@
 
         <!-- level 6 issues - bad stuff here -->
 
-        <UndefinedMethod errorLevel="info" />
+
         <InvalidNullableReturnType errorLevel="info" />
         <ImplementedReturnTypeMismatch errorLevel="info" />
         <UnresolvableInclude errorLevel="info" />
@@ -99,6 +97,12 @@
                 <file name="lib/Doctrine/ORM/UnitOfWork.php" />
             </errorLevel>
         </ParadoxicalCondition>
+
+        <PossiblyUndefinedMethod>
+            <errorLevel type="info">
+                <file name="lib/Doctrine/ORM/Cache/Region/DefaultMultiGetRegion.php" />
+            </errorLevel>
+        </PossiblyUndefinedMethod>
 
         <InvalidArgument>
             <errorLevel type="info">
@@ -127,7 +131,14 @@
             <errorLevel type="info">
                 <file name="lib/Doctrine/ORM/Query/TreeWalkerChain.php" />
                 <file name="lib/Doctrine/ORM/Tools/Pagination/WhereInWalker.php" />
+                <file name="lib/Doctrine/ORM/Internal/Hydration/IterableResult.php" />
             </errorLevel>
         </InvalidPropertyAssignmentValue>
+
+        <AssignmentToVoid>
+            <errorLevel type="info">
+                <file name="lib/Doctrine/ORM/Internal/Hydration/IterableResult.php" />
+            </errorLevel>
+        </AssignmentToVoid>
     </issueHandlers>
 </psalm>
