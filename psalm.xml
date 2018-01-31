@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<psalm
+    name="Example Psalm config with recommended defaults"
+    stopOnFirstError="false"
+    useDocblockTypes="false"
+    useDocblockPropertyTypes="true"
+    totallyTyped="false"
+    useAssertForType="true"
+>
+    <projectFiles>
+        <directory name="lib" />
+    </projectFiles>
+
+    <issueHandlers>
+        <LessSpecificReturnType errorLevel="info" />
+
+        <!-- level 3 issues - slightly lazy code writing, but provably low false-negatives -->
+
+        <DeprecatedMethod errorLevel="info" />
+
+        <MissingClosureReturnType errorLevel="info" />
+        <MissingReturnType errorLevel="info" />
+        <MissingPropertyType errorLevel="info" />
+        <InvalidDocblock errorLevel="info" />
+        <MisplacedRequiredParam errorLevel="info" />
+
+        <PropertyNotSetInConstructor errorLevel="info" />
+        <MissingConstructor errorLevel="info" />
+        <UntypedParam errorLevel="info" />
+
+        <!-- level 4 issues - points to possible deficiencies in logic, higher false-positives -->
+
+        <MismatchingDocblockReturnType errorLevel="info" />
+        <MismatchingDocblockParamType errorLevel="info" />
+
+        <MoreSpecificReturnType errorLevel="info" />
+        <LessSpecificReturnStatement errorLevel="info" />
+        <TypeCoercion errorLevel="info" />
+        <RedundantCondition errorLevel="info" />
+
+        <PossiblyFalseArgument errorLevel="info" />
+        <PossiblyFalsePropertyAssignmentValue errorLevel="info" />
+        <PossiblyFalseReference errorLevel="info" />
+        <PossiblyInvalidArgument errorLevel="info" />
+        <PossiblyInvalidArrayAccess errorLevel="info" />
+        <PossiblyInvalidArrayAssignment errorLevel="info" />
+        <PossiblyInvalidMethodCall errorLevel="info" />
+        <PossiblyInvalidPropertyAssignment errorLevel="info" />
+        <PossiblyInvalidPropertyAssignmentValue errorLevel="info" />
+        <PossiblyInvalidPropertyFetch errorLevel="info" />
+        <PossiblyNullArgument errorLevel="info" />
+        <PossiblyNullArrayAccess errorLevel="info" />
+        <PossiblyNullArrayAssignment errorLevel="info" />
+        <PossiblyNullArrayOffset errorLevel="info" />
+        <PossiblyNullFunctionCall errorLevel="info" />
+        <PossiblyNullIterator errorLevel="info" />
+        <PossiblyNullOperand errorLevel="info" />
+        <PossiblyNullPropertyAssignment errorLevel="info" />
+        <PossiblyNullPropertyAssignmentValue errorLevel="info" />
+        <PossiblyNullPropertyFetch errorLevel="info" />
+        <PossiblyNullReference errorLevel="info" />
+        <PossiblyUndefinedGlobalVariable errorLevel="info" />
+        <PossiblyUndefinedVariable errorLevel="info" />
+        <PossiblyUndefinedMethod errorLevel="info" />
+
+        <!-- level 5 issues - should be avoided at mosts costs... -->
+
+        <ForbiddenCode errorLevel="info" />
+        <ImplicitToStringCast errorLevel="info" />
+        <InvalidScalarArgument errorLevel="info" />
+        <InvalidToString errorLevel="info" />
+        <MethodSignatureMismatch errorLevel="info" />
+        <NoInterfaceProperties errorLevel="info" />
+        <TooManyArguments errorLevel="info" />
+        <TypeDoesNotContainType errorLevel="info" />
+        <InvalidOperand errorLevel="info" />
+        <MoreSpecificImplementedReturnType errorLevel="info" />
+        <MoreSpecificImplementedParamType errorLevel="info" />
+
+        <!-- level 6 issues - bad stuff here -->
+
+        <UndefinedMethod errorLevel="info" />
+        <InvalidNullableReturnType errorLevel="info" />
+        <ImplementedReturnTypeMismatch errorLevel="info" />
+        <UnresolvableInclude errorLevel="info" />
+
+        <!-- Doctrine only -->
+
+        <InvalidReturnType>
+            <errorLevel type="info">
+                <file name="lib/Doctrine/ORM/Query/TreeWalkerAdapter.php" />
+            </errorLevel>
+        </InvalidReturnType>
+
+        <RawObjectIteration errorLevel="info" />
+
+        <ParadoxicalCondition>
+            <errorLevel type="info">
+                <file name="lib/Doctrine/ORM/UnitOfWork.php" />
+            </errorLevel>
+        </ParadoxicalCondition>
+
+        <InvalidArgument>
+            <errorLevel type="info">
+                <file name="lib/Doctrine/ORM/Mapping/Driver/Annotation/AnnotationDriver.php" />
+                <file name="lib/Doctrine/ORM/Mapping/Driver/DatabaseDriver.php" />
+                <file name="lib/Doctrine/ORM/Mapping/Driver/NewAnnotationDriver.php" />
+                <file name="lib/Doctrine/ORM/Mapping/EmbeddedClassMetadata.php" />
+                <file name="lib/Doctrine/ORM/Tools/Console/MetadataFilter.php" />
+            </errorLevel>
+        </InvalidArgument>
+
+        <TooFewArguments>
+            <errorLevel type="info">
+                <file name="lib/Doctrine/ORM/Mapping/Factory/ClassMetadataGenerator.php" />
+            </errorLevel>
+        </TooFewArguments>
+
+        <UndefinedPropertyFetch>
+            <errorLevel type="info">
+                <file name="lib/Doctrine/ORM/Query/AST/Functions/DateAddFunction.php" />
+                <file name="lib/Doctrine/ORM/Query/AST/Functions/DateSubFunction.php" />
+            </errorLevel>
+        </UndefinedPropertyFetch>
+
+        <InvalidPropertyAssignmentValue>
+            <errorLevel type="info">
+                <file name="lib/Doctrine/ORM/Query/TreeWalkerChain.php" />
+                <file name="lib/Doctrine/ORM/Tools/Pagination/WhereInWalker.php" />
+            </errorLevel>
+        </InvalidPropertyAssignmentValue>
+    </issueHandlers>
+</psalm>

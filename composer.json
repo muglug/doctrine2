@@ -30,7 +30,8 @@
     },
     "require-dev": {
         "doctrine/coding-standard": "~2.0.0",
-        "phpunit/phpunit": "^6.5"
+        "phpunit/phpunit": "^6.5",
+        "vimeo/psalm": "dev-master"
     },
     "autoload": {
         "psr-4": { "Doctrine\\ORM\\": "lib/Doctrine/ORM" }
