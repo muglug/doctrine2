@@ -176,7 +176,7 @@ class SqlWalker implements TreeWalker
     /**
      * Gets the Query instance used by the walker.
      *
-     * @return Query.
+     * @return Query
      */
     public function getQuery()
     {
